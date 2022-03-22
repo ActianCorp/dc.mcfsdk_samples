@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <parent>
+		<groupId>com.actian.dc.mcfsdk.samples</groupId>
+		<artifactId>samples_top</artifactId>
+        <version>12.0.0-23</version>
+    </parent>
+	<groupId>com.actian.dc.mcfsdk.samples</groupId>
+	<artifactId>contenttype_invoker</artifactId>
+    <name>Content Type Invoker Sample</name>
+	<packaging>jar</packaging>
+ 
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+    <dependencies>
+		<dependency>
+			<groupId>com.pervasive.cosmos</groupId>
+			<artifactId>djpl</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>com.pervasive.cosmos</groupId>
+            <artifactId>jcore</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+				  <source>${java.version}</source>
+				  <target>${java.version}</target>
+				</configuration>
+			</plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>mcf</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>${basedir}/src/main/assemblies/distribution.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+</project>

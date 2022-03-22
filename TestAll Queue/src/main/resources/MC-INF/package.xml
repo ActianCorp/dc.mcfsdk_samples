@@ -1,0 +1,49 @@
+<Package name="Basic TestAll Samples"
+         version="1.0.0"
+         schemaVersion="2"
+         vendor="Pervasive Software, Inc.">
+
+    <!-- TestAll Demonstration Queue Component -->
+    <Component name="TestAll Component"
+               version="1.0.0"
+               class="Message"
+               compatibleVersion="1">
+
+      <!-- Components may provide a description -->
+      <Description>
+      Demonstrates use of several of the basic MCF SDK
+      APIs available to queue components
+      </Description>
+
+      <!--
+      Component is implemented in Java.  The top-level
+      Java class to be loaded is TestAll
+      -->
+      <Java mainclass="com.actian.dc.mcfsdk.samples.TestAll"/>
+
+      <!--
+      The Model element tells the framework the type
+      by which this component should be classified.  It
+      also tells the framework which actions are supported
+      by the component.  Some actions may also have
+      associated options.
+
+      This component should be classified by the framework
+      as a "Queue Session."  It exposes the PutMessage and
+      GetMessage actions.  The GetMessage action has an
+      associated option that can be set at the step level.
+      --> 
+      <Model type="queue">
+        <Action type="PutMessage">
+          <Parameter type="Message" usage="required"/>
+          <Parameter type="Queue" usage="notused"/>
+        </Action>
+        <Action type="GetMessage">
+          <Parameter type="Message" usage="required"/>
+          <Parameter type="Queue" usage="notused"/>
+          <Option type="File" name="sourceURI" fullname="Source File"/>
+        </Action>
+      </Model>
+    </Component>
+
+</Package>

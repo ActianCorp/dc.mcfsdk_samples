@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.actian.dc.mcfsdk.samples</groupId>
+    <artifactId>samples_top</artifactId>
+    <version>12.0.0-23</version>
+    <packaging>pom</packaging>
+    <name>Message Component SDK Samples</name>
+    <repositories>
+        <repository>
+            <releases>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <id>dc_maven_repo</id>
+            <name>DataConnect Client SDK Maven Repository</name>
+            <url>https://raw.github.com/ActianCorp/dc.maven/repository</url>
+        </repository>
+    </repositories>
+    <modules>
+        <module>MessageBox Invoker</module>
+        <module>Null Transformer</module>
+        <module>Current Time Queue</module>
+        <module>TestAll Queue</module>
+        <module>File Content Type Invoker</module>
+    </modules>
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+           </plugins>
+        </pluginManagement>
+    </build>
+</project>

@@ -1,0 +1,30 @@
+<Package name="Message Box Sample" verion="1.0.0" schemaVersion="2">
+    <Component name="MessageBox Invoker" version="1.0.0" class="Message">
+        <Description>
+            Simple Java component that pops up a message box
+        </Description>
+
+        <!-- component's implementation language -->
+        <Java mainclass="com.actian.dc.mcfsdk.samples.MsgBoxInvoker"/>
+
+        <!--
+        The component "model," which advertises the component's
+        "type" (invoker in this case) and actions, which for
+        invokers is "Execute"
+        -->
+        <Model type="invoker">
+            <Action type="Execute">
+                <Parameter type="SourceMessage"/>
+                <Parameter type="TargetMessage"/>
+                <Option name="custom" fullname="Custom Option" default="" type="Custom">
+				<Description>Click within the field and then click the button to open a dialog which 
+will prompt for a value.  Custom options are useful when the value can't
+easily be entered or multiple options need to be updated at once based
+on user feedback.
+                </Description>
+				</Option>
+            </Action>
+        </Model>
+    </Component>
+</Package>
+

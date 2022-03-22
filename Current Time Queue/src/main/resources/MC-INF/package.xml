@@ -1,0 +1,50 @@
+<Package name="Time Sample"
+         version="1.0.0"
+         schemaVersion="2"
+         vendor="Pervasive Software, Inc.">
+
+    <!-- TestAll Demonstration Queue Component -->
+    <Component name="Current Time Queue"
+               version="1.0.0"
+               class="Message"
+               compatibleVersion="1">
+
+      <!-- Components may provide a description -->
+      <Description>
+      Demonstrates use of several of the basic MCF SDK
+      APIs available to queue components
+      </Description>
+
+      <!--
+      Component is implemented in Java.  The top-level
+      Java class to be loaded is CurrentTimeQueue
+      -->
+      <Java mainclass="com.actian.dc.mcfsdk.samples.CurrentTimeQueue"/>
+
+      <!--
+      The Model element tells the framework the type
+      by which this component should be classified.  It
+      also tells the framework which actions are supported
+      by the component.  Some actions may also have
+      associated options.
+
+      This component should be classified by the framework
+      as a "Queue Session."  It exposes the GetMessage
+      action.  The GetMessage action has two associated
+      options that can be set at the step level.
+      --> 
+      <Model type="queue">
+        <Action type="GetMessage">
+          <Parameter type="Message" usage="required"/>
+          <Parameter type="Queue" usage="notused"/>
+          <Option type="Number" name="hoursOffset" fullname="Hours Offset" default="0">
+              <Description>Number of hours from GMT (Range -12 to 12)</Description>
+          </Option>
+          <Option type="Number" name="minutesOffset" fullname="Minutes Offset" default="0">
+              <Description>Additional minutes offset from the hours offset (Range 0 to 59)</Description>
+          </Option>
+        </Action>
+      </Model>
+    </Component>
+
+</Package>

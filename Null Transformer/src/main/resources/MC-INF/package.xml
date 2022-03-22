@@ -1,0 +1,25 @@
+<Package name="Transformer Samples" version="1.0.0" vendor="PVSW" schemaVersion="2">
+    <Component name="Null Transformer" version="1.0.0"
+               class="Message" compatibleVersion="1">
+
+        <Description>
+            Sample component that performs a "null" transformation, i.e. directly
+            copies source message to target message
+        </Description>
+
+        <!-- component's implementation language -->
+        <Java mainclass="com.actian.dc.mcfsdk.samples.NullTransformer"/>
+
+        <!-- component options (none required by this sample) -->
+
+        <!-- the component "model," which advertises the component's
+        "type" (in this case, transformer) and actions, which is
+        "Execute" in transformers -->
+        <Model type="transformer">
+            <Action type="Execute">
+                <Parameter type="SourceMessage"/>
+                <Parameter type="TargetMessage"/>
+            </Action>
+        </Model>
+    </Component>
+</Package>

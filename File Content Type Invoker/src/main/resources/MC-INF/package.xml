@@ -1,0 +1,29 @@
+<Package name="Content Type Sample" verion="1.0.0" schemaVersion="2">
+    <Component name="File Content Type Invoker" version="1.0.0" class="Message">
+        <Description>
+            Invoker component which attempts to determine the content type of
+            a provided file.
+        </Description>
+
+        <!-- component's implementation language -->
+        <Java mainclass="com.actian.dc.mcfsdk.samples.ContentTypeInvoker"/>
+
+        <!--
+        The component "model," which advertises the component's
+        "type" (invoker in this case) and actions, which for
+        invokers is "Execute"
+        -->
+        <Model type="invoker">
+            <Action type="Execute">
+                <Parameter type="SourceMessage"/>
+                <Parameter type="TargetMessage"/>
+                <Option type="File" name="filePath" fullname="Source File">
+                    <Description>Path to the source file from which determination
+of the content type will be attempted.
+                    </Description>
+                </Option>
+            </Action>
+        </Model>
+    </Component>
+</Package>
+
