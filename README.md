@@ -50,7 +50,6 @@ To build all samples, run the following command: **`mvn clean install`**
 * A target folder will be created in each sample module. 
 * A jar file with name pattern <component_name>-<component_version>-with-deps.jar will be created in each target folder.
 ** This file is the "deployment package" which will need to be dropped into the "Plug-Ins" folder, which is typically be in **`\ProgramData\Actian\DataConnect\dc-rcp-64-bit-<version>`** on Windows
-* An Engine execution log is created under **`target/work/log/ec`**
 
 ---
 
